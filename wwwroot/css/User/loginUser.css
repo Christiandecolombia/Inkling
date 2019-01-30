@@ -1,0 +1,21 @@
+.login{
+    height:500px;
+    width:500px;
+    background-color:red;
+    margin-left: 22%;
+    margin-bottom: -15%;
+}
+.inline{
+    display: inline-block;
+}
+.email{
+    display:inline-block;
+    vertical-align: bottom;
+}
+.password{
+
+}
+.linputbox{
+    width:250px;
+    display:inline-block;
+}

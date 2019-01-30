@@ -1,0 +1,67 @@
+
+header{
+    display: inline;
+
+}
+nav {
+    background-color: #080762;
+    padding: 0px 0px 7px 20px;
+
+
+}
+nav a{
+    color: white;
+    font-weight: bolder;
+    font-family: sans-serif;
+    text-decoration-color: white;
+    text-decoration: none;
+}
+.intro{
+    margin-left: 25%;
+    padding: 2%;
+    text-align: center;
+
+}
+.left{
+    display:inline-block;
+    margin-top:-3%;
+
+
+}
+.DescBox{
+    display: inline-block;
+    height:150px;
+    width:300px;
+    border:1px solid #ccc;
+    font:16px/26px Georgia, Garamond, Serif;overflow:auto;
+    color:blue;
+    
+}
+
+.ApprList{
+    display: inline-block;
+    padding: 10px;
+    margin-left: 15%;
+    vertical-align:top;
+    border: solid #080762 2px;
+    height: 300px;
+
+
+}
+.MessageBox{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    background-color: #080762;
+    color: #ccc;
+    border:1px solid #ccc;
+}
+.message{
+    display: inline-block;
+    height:150px;
+    width:400px;
+    border:1px solid #ccc;
+    font:16px/26px Georgia, Garamond, Serif;overflow:auto;
+    color:white;
+}

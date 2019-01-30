@@ -1,0 +1,50 @@
+nav {
+    background-color: #080762;
+    padding: 0px 0px 7px 20px;
+
+
+}
+nav a{
+    color: white;
+    font-weight: bolder;
+    font-family: sans-serif;
+    text-decoration-color: white;
+    text-decoration: none;
+}
+.MainText{
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    margin-top:4%;
+}
+
+.EddPic{
+    display: inline-block;
+    width: 50%;
+    position: relative;
+    left: 56%;
+    margin-top: -32%;
+    vertical-align: top;
+}
+
+.textarea{
+    width: 100%;
+
+}
+table{
+    width:100%;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: gray;
+}
+.form{
+    display:inline-block;
+    width:35%;
+}
+.downloads{
+    display:inline-block;
+    vertical-align:top;
+    margin-left:31%;
+    margin-top:2%;
+}

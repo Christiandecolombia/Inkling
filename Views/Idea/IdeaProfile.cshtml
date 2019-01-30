@@ -1,0 +1,137 @@
+@model Message
+<head>
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/Idea/ideaprofile.css"/>
+</head>
+<header> 
+        <partial name="HeadingPartial"/>
+</header>
+
+<nav>
+    <a href="/dashboard">Home |</a>
+    <a href="/Edit">Edit User Profile |</a>
+    <a href="/idea/form">New Idea |</a>
+    <a href="/idea/all">All Ideas |</a>
+    <a href="/Logout">Logout</a>
+</nav>
+<div>
+    <div class="intro">
+        <h1> @ViewBag.Idea.name</h1>
+        <h5>Creator: @ViewBag.creator.fname @ViewBag.creator.lname</h5>
+    </div>
+    <div class="left">
+        <h4>Description</h4>
+        <div class= "DescBox" >
+            @ViewBag.Idea.desc
+        </div>
+        <br>
+        @if(ViewBag.id==@ViewBag.Idea.ApproverId 
+        || ViewBag.id==@ViewBag.Idea.ApproverRank0 
+        ||ViewBag.id==@ViewBag.Idea.ApproverRank1
+        ||ViewBag.id==@ViewBag.Idea.ApproverRank2
+        ||ViewBag.id==@ViewBag.Idea.ApproverRank3
+        ||ViewBag.id==@ViewBag.Idea.ApproverRank4
+        ||ViewBag.id==@ViewBag.Idea.ApproverRank5
+        ||ViewBag.id==@ViewBag.creator.UserId)
+            {
+        <h5><a href="/Experiment/@ViewBag.Idea.IdeaId">Experiment-Driven Design Page</a></h5>
+        <h5><a href="/idea/@ViewBag.Idea.IdeaId/Pod">Build a Pod</a></h5>
+            }
+        <br>
+        
+ 
+
+    </div>
+    <div class="ApprList">
+        <h4>List of approvals</h4>
+        @if(ViewBag.id==@ViewBag.Idea.ApproverId)
+            {
+                <partial name="ApprovalPartial"/>
+            }
+
+        @{
+            <ol type="1">
+                <li>@ViewBag.creator.fname @ViewBag.creator.lname:
+                    @if(@ViewBag.creator.Rank ==0 && @ViewBag.Idea.zeroAD !=null)
+                { 
+                    @ViewBag.Idea.zeroAD
+                }
+                @if(@ViewBag.creator.Rank ==1 && @ViewBag.Idea.oneAD !=null)
+                { 
+                    @ViewBag.Idea.oneAD
+                }
+                @if(@ViewBag.creator.Rank ==2 && @ViewBag.Idea.twoAD !=null)
+                { 
+                    @ViewBag.Idea.twoAD
+                }
+                @if(@ViewBag.creator.Rank ==3 && @ViewBag.Idea.threeAD !=null)
+                { 
+                    @ViewBag.Idea.threeAD
+                }
+                @if(@ViewBag.creator.Rank ==4 && @ViewBag.Idea.fourAD !=null)
+                { 
+                    @ViewBag.Idea.fourAD
+                }
+                @if(@ViewBag.creator.Rank ==5 && @ViewBag.Idea.fiveAD !=null)
+                { 
+                    @ViewBag.Idea.fiveAD
+                }
+                </li>
+                @foreach(var a in ViewBag.approvers)
+                    {   
+                        <li>@a.fname @a.lname: 
+                @if(@a.Rank ==0 && @ViewBag.Idea.zeroAD !=null)
+                { 
+                    @ViewBag.Idea.zeroAD
+                }
+                @if(@a.Rank ==1 && @ViewBag.Idea.oneAD !=null)
+                { 
+                    @ViewBag.Idea.oneAD
+                }
+                @if(@a.Rank ==2 && @ViewBag.Idea.twoAD !=null)
+                { 
+                    @ViewBag.Idea.twoAD
+                }
+                @if(@a.Rank ==3 && @ViewBag.Idea.threeAD !=null)
+                { 
+                    @ViewBag.Idea.threeAD
+                }
+                @if(@a.Rank ==4 && @ViewBag.Idea.fourAD !=null)
+                { 
+                    @ViewBag.Idea.fourAD
+                }
+                @if(@a.Rank ==5 && @ViewBag.Idea.fiveAD !=null)
+                { 
+                    @ViewBag.Idea.fiveAD
+                }
+                </li>
+
+                }
+            </ol>
+        }
+    </div>
+</div>
+    <div class="MessageBox">
+        <div class="message">
+            <ul>
+            @{
+                @foreach(var m in @ViewBag.messages){
+                <li>@m.Creator.fname @m.Creator.lname @m.created_at.ToString("MM/dd/yyyy")</li> 
+                <li style="list-style-type: none;" > @m.message </li>
+            }
+            }
+            </ul>
+        </div>
+        <form action="/Messages/@ViewBag.Idea.IdeaId" method="post">
+ 
+        <input type="hidden" asp-for="UserId" value="@ViewBag.id">
+        <input type="hidden" asp-for="IdeaId" value="@ViewBag.Idea.IdeaId">
+        <label asp-for="message"></label>
+        <input asp-for="message">
+        <button>Submit</button>
+
+        
+        
+        </form>
+        this is the message box
+    </div>
+</div>

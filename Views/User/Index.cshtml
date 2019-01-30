@@ -1,0 +1,92 @@
+@model User
+<head>
+<title>Login or Register</title>
+<link rel="stylesheet" type="text/css" media="screen" href="~/css/User/Index.css"/>
+</head>
+<div class="top">
+    <div >
+        <partial name="loginUser"/>
+        <partial name="HeadingPartial"/>
+        
+    </div>
+    <nav>
+        
+    </nav>
+</div>
+<body class="body">
+        <div class=registration>
+            <h2>Login and Registration</h2><br>
+            <h4>Register here!</h4>
+
+            <form  asp-action="register" asp-controller="User" method="post">
+                <br><span></span>
+                <label asp-for="fname"></label>
+                <br>
+                <input  class="inputbox" type="text" asp-for="fname">
+                <br>
+                <span asp-validation-for="fname"></span>
+                <br>
+                <label asp-for="lname"></label>
+                <br>
+                <input  class ="inputbox" type="text" asp-for="lname">
+                <br>
+                <span asp-validation-for="lname"></span>
+                <br>
+                <label asp-for="email" ></label>
+                <br>
+                <input  class ="inputbox" type="text" asp-for="email">
+                <br>
+                <span asp-validation-for="email"></span>
+                <br>
+                <label asp-for="password" ></label><br>
+                <input  class ="inputbox" type="password" asp-for="password">
+                <br>
+                <span asp-validation-for="password"></span>
+                <br>
+                <label asp-for="confirm_password"></label>
+                <br>
+                <input  class ="inputbox" type="password" asp-for="confirm_password">
+                <br>
+                <label asp-for="departId"></label>
+                <br>
+                <select class="inputbox" asp-for="departId">
+                    <option value="0">Customer Service</option>
+                    <option value="1">DevOps</option>
+                    <option value="2">Marketing/Sales</option>
+                </select>
+                <br>
+                <label asp-for="Rank"></label>
+                <br>
+                <select class="inputbox" asp-for="Rank">
+                    <option value="5">Employee</option>
+                    <option value="4">Supervisor</option>
+                    <option value="3">Manager</option>
+                    <option value="2">Director</option>
+                    <option value="1">VP</option>
+                    <option value="0">C</option>
+                </select>
+                <br>
+                <br>
+                <input type="submit" value="Register"><br>
+            </form>
+        </div>
+    <div class="Group">
+                    <img src="images/InklingLogo.jpg">
+                <br>
+    <span>Inkling</span> focus on <span>Experiment-Driven Design</span>, a method in which employees can focus 
+    their ideas and turn them into successful <span>money-making inovations</span>. We give an 
+    easy path these ideas can take that will bring them from simple fleeting 
+    thoughts to complex proven concepts. Our mission is bring back innovation 
+    to both large and small corporations and <span>empower</span> employees to be 
+    <span>disruptors</span> in there sectors. <br>
+
+    </div>
+    <div class="Indexpic">
+
+               <img src="images/Group.jpg">
+    </div>
+
+
+
+    </body>
+</html>
